@@ -1,8 +1,15 @@
 import Counter from "./Counter"
+import { useScrollReveal } from "../hooks/useScrollReveal"
 
 function About() {
+  const [ref, visible] = useScrollReveal()
+
   return (
-    <section id="about" className="about">
+    <section 
+      id="about" 
+      ref={ref}
+      className={`about reveal ${visible ? "active" : ""}`}
+    >
       <div className="container">
         <div className="section-header">
           <h2><i className="fas fa-users"></i> About Us</h2>
@@ -43,11 +50,11 @@ function About() {
               complex business challenges.
             </p>
             <div className="about-stats">
-              <div className="stat">
+              <div className={`stat reveal delay-1 ${visible ? "active" : ""}`}>
                 <Counter end={3} />
                 <p>Years of Expertise</p>
               </div>
-              <div className="stat">
+              <div className={`stat reveal delay-2 ${visible ? "active" : ""}`}>
                 <Counter end={15} />
                 <p>AI Projects Delivered</p>
               </div>

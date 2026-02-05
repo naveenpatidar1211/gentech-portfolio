@@ -1,8 +1,15 @@
 import TypingText from "./TypingText"
+import { useScrollReveal } from "../hooks/useScrollReveal"
 
 function Hero() {
+  const [ref, visible] = useScrollReveal()
+
   return (
-    <section id="home" className="hero">
+    <section 
+      id="home" 
+      ref={ref}
+      className={`hero reveal ${visible ? "active" : ""}`}
+    >
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
