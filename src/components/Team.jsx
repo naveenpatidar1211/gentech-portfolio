@@ -39,13 +39,13 @@ function Team() {
             <p className="email"><a href="mailto:naveenpatidar@gentech.in">naveenpatidar@gentech.in</a></p>
           </div>
 
-          <div className={`team-card reveal delay-4 ${visible ? "active" : ""}`}>
+          {/* <div className={`team-card reveal delay-4 ${visible ? "active" : ""}`}>
             <img src="/harsh sir.png" alt="Harsh Jaiswal" className="team-photo" />
             <h3>Harsh Jaiswal</h3>
             <p className="role">Developer - Generative AI & Django Expert</p>
             <p className="description">Passionate about Python, Django, and Generative AI — building intelligent, scalable solutions that blend web development with cutting-edge AI innovation.</p>
             <p className="email"><a href="mailto:harshjaiswal@gentech.in">harshjaiswal@gentech.in</a></p>
-          </div>
+          </div> */}
 
           <div className={`team-card reveal delay-1 ${visible ? "active" : ""}`}>
             <img src="/sohail.jpeg" alt="Sohail Pathan" className="team-photo" />
