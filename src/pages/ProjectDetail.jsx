@@ -28,7 +28,7 @@ function ProjectDetail({ index }) {
 
           <div className="detail-body">
             <h1><i className="fas fa-folder-open"></i> {p.title}</h1>
-            <p className="lead">{p.longDescription}</p>
+            <p className="lead">{p.long_description || p.longDescription || p.description}</p>
 
             <div className="detail-meta">
               {p.live && (
@@ -45,14 +45,20 @@ function ProjectDetail({ index }) {
             <div className="detail-sections">
               <div className="section">
                 <h3>About This Project</h3>
-                <p>{p.longDescription}</p>
+                <p>{p.long_description || p.longDescription || p.description}</p>
+                <div style={{marginTop:12}}>
+                  <button className="btn" onClick={() => (window.location.hash = "")}>Back to Projects</button>
+                </div>
               </div>
 
               <div className="section">
                 <h3>Technologies Used</h3>
                 <div className="project-tech">
-                  {p.icons && p.icons.map((ic, i) => (
-                    <span key={i} className="tech-pill"><i className={ic} style={{marginRight:8}}></i>{p.technologies[i] || ''}</span>
+                  {p.technologies && p.technologies.map((t, i) => (
+                    <span key={i} className="tech-pill">
+                      {p.icons && p.icons[i] && <i className={p.icons[i]} style={{marginRight:8}}></i>}
+                      {t}
+                    </span>
                   ))}
                 </div>
               </div>
