@@ -1594,3 +1594,110 @@ html {
     left: 15px;
   }
 }
+
+/* project detail new styles (from user) */
+.project-detail{
+    padding:80px 0;
+    background:var(--bg-secondary);
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:18px;
+    cursor:pointer;
+    opacity:.7;
+}
+
+/* HERO */
+.detail-hero{
+    background:var(--card-bg);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.detail-image{
+    height:260px;
+    position:relative;
+}
+
+.detail-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.badge{
+    position:absolute;
+    top:14px;
+    right:14px;
+    background:#7c3aed;
+    color:white;
+    padding:4px 10px;
+    border-radius:8px;
+    font-size:.75rem;
+}
+
+.detail-body{
+    padding:28px;
+}
+
+.detail-body h1{
+    margin-bottom:10px;
+}
+
+.lead{
+    opacity:.8;
+    margin-bottom:18px;
+}
+
+/* META */
+.meta-row{
+    display:flex;
+    gap:30px;
+    margin-bottom:18px;
+    font-size:.9rem;
+    opacity:.75;
+}
+
+.meta-row span{
+    margin-left:6px;
+    font-weight:500;
+}
+
+/* ACTIONS */
+.detail-actions{
+    display:flex;
+    gap:10px;
+    margin-bottom:16px;
+}
+
+/* TECH */
+.tech-title{
+    margin-top:18px;
+    margin-bottom:10px;
+}
+
+.project-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.tech-pill{
+    background:#eef2ff;
+    color:#4f46e5;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:.8rem;
+}
+
+/* ABOUT */
+.detail-section{
+    margin-top:28px;
+    background:var(--card-bg);
+    padding:24px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
