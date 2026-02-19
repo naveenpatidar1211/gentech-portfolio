@@ -1,4 +1,5 @@
 import projects from "../data/projects_detail"
+import Counter from "./Counter"
 
 function ProjectDetail({ index }) {
   const p = projects[index]
@@ -63,8 +64,34 @@ function ProjectDetail({ index }) {
         {/* ABOUT CARD */}
         <div className="detail-section">
           <h3>About This Project</h3>
-          <p>{p.long_description || p.description}</p>
+          <p>{p.long_description}</p>
         </div>
+
+        {/* ===== STATS SECTION (BOTTOM) ===== */}
+    <div className="stats-row">
+
+      <div className="stat-card">
+        <div className="stat-icon">🚀</div>
+        <Counter end={20} />
+        <h5>Projects Delivered</h5>
+        <p>Successfully completed projects across various domains</p>
+      </div>
+
+      <div className="stat-card">
+        <div className="stat-icon">🤝</div>
+        <Counter end={15} />
+        <h5>Satisfied Clients</h5>
+        <p>Building long-term relationships with our clients</p>
+      </div>
+
+      <div className="stat-card">
+        <div className="stat-icon">💻</div>
+        <Counter end={1000} />
+        <h5>Hours of Development</h5>
+        <p>Dedicated to creating exceptional digital experiences</p>
+      </div>
+
+    </div>
 
       </div>
     </section>
@@ -72,3 +99,4 @@ function ProjectDetail({ index }) {
 }
 
 export default ProjectDetail
+
