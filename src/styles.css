@@ -1595,7 +1595,7 @@ html {
   }
 }
 
-/* project detail new styles (from user) */
+/* ProjectDetail new styles (from user) */
 .project-detail{
     padding:80px 0;
     background:var(--bg-secondary);
@@ -1614,9 +1614,13 @@ html {
     border-radius:16px;
     overflow:hidden;
     box-shadow:0 12px 28px rgba(0,0,0,.08);
+    display:flex;
+    gap:20px;
 }
 
 .detail-image{
+    flex: 1;
+    min-width: 320px;
     height:260px;
     position:relative;
 }
@@ -1640,6 +1644,7 @@ html {
 
 .detail-body{
     padding:28px;
+    flex: 1.2;
 }
 
 .detail-body h1{
