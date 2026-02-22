@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import projects from "../data/projects_detail"
 import Counter from "../components/Counter"
 
@@ -32,6 +33,10 @@ const techIcons = {
 }
 
 function ProjectDetail({ index }) {
+  // Scroll to top when component mounts or index changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [index])
   const p = projects[index]
 
   if (!p) {
@@ -41,7 +46,12 @@ function ProjectDetail({ index }) {
           <p>Project not found.</p>
           <button className="btn" onClick={() => {
             window.location.hash = ""
-            window.scrollTo(0, 0)
+            setTimeout(() => {
+              const projectsSection = document.getElementById("projects")
+              if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: "smooth" })
+              }
+            }, 100)
           }}>Back to Projects</button>
         </div>
       </section>
@@ -54,7 +64,12 @@ function ProjectDetail({ index }) {
 
         <a className="back-link" onClick={() => {
           window.location.hash = ""
-          window.scrollTo(0, 0)
+          setTimeout(() => {
+            const projectsSection = document.getElementById("projects")
+            if (projectsSection) {
+              projectsSection.scrollIntoView({ behavior: "smooth" })
+            }
+          }, 100)
         }}>
           ← Back to Projects
         </a>
