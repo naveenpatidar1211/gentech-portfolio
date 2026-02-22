@@ -17,7 +17,20 @@ function App() {
     const savedTheme = localStorage.getItem("theme") || "light-theme"
     document.documentElement.className = savedTheme
 
-    const onHash = () => setRoute(window.location.hash || "")
+    // Disable automatic scroll restoration to handle it manually
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual"
+    }
+
+    const onHash = () => {
+      const newHash = window.location.hash || ""
+      setRoute(newHash)
+      // Scroll to top when navigating back to main page
+      if (!newHash.startsWith("#/project/")) {
+        // Use a small timeout to ensure DOM is ready
+        setTimeout(() => window.scrollTo(0, 0), 0)
+      }
+    }
     window.addEventListener("hashchange", onHash)
     return () => window.removeEventListener("hashchange", onHash)
   }, [])

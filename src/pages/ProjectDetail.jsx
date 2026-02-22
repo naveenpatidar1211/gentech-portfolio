@@ -39,7 +39,10 @@ function ProjectDetail({ index }) {
       <section className="project-detail not-found">
         <div className="container">
           <p>Project not found.</p>
-          <button className="btn" onClick={() => (window.location.hash = "#/projects")}>Back to Projects</button>
+          <button className="btn" onClick={() => {
+            window.location.hash = ""
+            window.scrollTo(0, 0)
+          }}>Back to Projects</button>
         </div>
       </section>
     )
@@ -49,7 +52,10 @@ function ProjectDetail({ index }) {
     <section className="project-detail">
       <div className="container">
 
-        <a className="back-link" onClick={() => (window.location.hash = "#/projects")}>
+        <a className="back-link" onClick={() => {
+          window.location.hash = ""
+          window.scrollTo(0, 0)
+        }}>
           ← Back to Projects
         </a>
 
