@@ -1,5 +1,5 @@
 import projects from "../data/projects_detail"
-import Counter from "./Counter"
+import Counter from "../components/Counter"
 
 function ProjectDetail({ index }) {
   const p = projects[index]
