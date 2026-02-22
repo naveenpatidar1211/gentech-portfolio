@@ -1,6 +1,36 @@
 import projects from "../data/projects_detail"
 import Counter from "../components/Counter"
 
+// Tech icon mapping
+const techIcons = {
+  "Python": "🐍",
+  "FastAPI": "⚡",
+  "PostgreSQL": "🐘",
+  "PostGIS": "🗺️",
+  "AWS": "☁️",
+  "React": "⚛️",
+  "TypeScript": "📘",
+  "Mapbox": "🗺️",
+  "OpenAI": "🤖",
+  "Anthropic": "🧠",
+  "Gemini": "✨",
+  "AWS Bedrock": "🪨",
+  "PySpark": "⚡",
+  "Flask": "🍶",
+  "Zoho CRM": "📊",
+  "Zoho Books": "📖",
+  "Zoho API": "🔌",
+  "Webhooks": "🪝",
+  "JavaScript": "📜",
+  "Node.js": "🟢",
+  "Express": "🚂",
+  "MongoDB": "🍃",
+  "Firebase": "🔥",
+  "TailwindCSS": "🎨",
+  "Next.js": "▲",
+  "Vue": "💚",
+}
+
 function ProjectDetail({ index }) {
   const p = projects[index]
 
@@ -9,7 +39,7 @@ function ProjectDetail({ index }) {
       <section className="project-detail not-found">
         <div className="container">
           <p>Project not found.</p>
-          <button className="btn" onClick={() => (window.location.hash = "")}>Back to Projects</button>
+          <button className="btn" onClick={() => (window.location.hash = "#/projects")}>Back to Projects</button>
         </div>
       </section>
     )
@@ -19,7 +49,7 @@ function ProjectDetail({ index }) {
     <section className="project-detail">
       <div className="container">
 
-        <a className="back-link" onClick={() => (window.location.hash = "")}>
+        <a className="back-link" onClick={() => (window.location.hash = "#/projects")}>
           ← Back to Projects
         </a>
 
@@ -28,7 +58,6 @@ function ProjectDetail({ index }) {
 
           <div className="detail-image">
             <img src={p.image} alt={p.title} />
-            <span className="badge">Featured</span>
           </div>
 
           <div className="detail-body">
@@ -54,7 +83,10 @@ function ProjectDetail({ index }) {
             <h4 className="tech-title">Technologies Used</h4>
             <div className="project-tech">
               {p.technologies?.map((t, i) => (
-                <span key={i} className="tech-pill">{t}</span>
+                <span key={i} className="tech-pill">
+                  <span className="tech-icon">{techIcons[t] || "💻"}</span>
+                  {t}
+                </span>
               ))}
             </div>
 

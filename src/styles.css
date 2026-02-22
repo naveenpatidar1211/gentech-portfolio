@@ -1611,24 +1611,27 @@ html {
 /* HERO */
 .detail-hero{
     background:var(--card-bg);
-    border-radius:16px;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 12px 28px rgba(0,0,0,.08);
+    box-shadow: 0 20px 45px rgba(0,0,0,.12), 0 8px 20px rgba(0,0,0,.08);
     display:flex;
-    gap:20px;
+    gap:40px;
+    padding:0;
 }
 
 .detail-image{
-    flex: 1;
-    min-width: 320px;
-    height:260px;
+    flex: 0.9;
+    min-width: 350px;
+    height:420px;
     position:relative;
+    overflow:hidden;
 }
 
 .detail-image img{
     width:100%;
     height:100%;
     object-fit:cover;
+    border-radius:20px 0 0 20px;
 }
 
 .badge{
@@ -1643,12 +1646,16 @@ html {
 }
 
 .detail-body{
-    padding:28px;
+    padding:40px 40px 40px 0;
     flex: 1.2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .detail-body h1{
-    margin-bottom:10px;
+    margin-bottom:12px;
+    font-size:1.8rem;
 }
 
 .lead{
@@ -1692,17 +1699,62 @@ html {
 .tech-pill{
     background:#eef2ff;
     color:#4f46e5;
-    padding:5px 12px;
+    padding:8px 14px;
     border-radius:20px;
     font-size:.8rem;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-weight:500;
+}
+
+.tech-icon{
+    font-size:1rem;
 }
 
 /* ABOUT */
 .detail-section{
-    margin-top:28px;
+    margin-top:40px;
     background:var(--card-bg);
-    padding:24px;
-    border-radius:14px;
-    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    padding:32px;
+    border-radius:16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,.1);
+}
+
+/* STATS */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.stat-card h5 {
+    margin: 12px 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.stat-card p {
+    opacity: 0.7;
+    font-size: 0.9rem;
 }
 

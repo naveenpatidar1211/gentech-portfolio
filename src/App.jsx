@@ -29,9 +29,7 @@ function App() {
     return (
       <>
         <ThemeButton />
-        <Navbar />
         <ProjectDetail index={idx} />
-        <Footer />
       </>
     )
   }
