@@ -24,9 +24,10 @@ function Footer() {
                 <a href="https://www.linkedin.com/company/gen-tech-ai" target="_blank" className="social-link"><i className="fab fa-linkedin"></i></a>
                 <a href="https://github.com/GenTechai" target="_blank" className="social-link"><i className="fab fa-github"></i></a>
                 {/* EMAIL ICON */}
-                <button onClick={() => setOpen(true)} className="social-link">
+                {/* <button onClick={() => setOpen(true)} className="social-link">
                   <i className="fas fa-envelope"></i>
-                </button>
+                </button> */}
+                <a href="#contact" className="social-link"><i className="fas fa-envelope"></i></a>
               </div>
             </div>
           </div>

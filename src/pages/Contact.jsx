@@ -77,22 +77,32 @@ ${form.message}`
         </div>
 
         {/* RIGHT — INFO */}
-        <div className="contact-info">
-          <h3>Let's build something impactful</h3>
-          <p>
-            We specialize in AI, ML systems, automation and scalable web platforms.
-          </p>
+        <div className="info-hero">
+            <h3>Let’s build something impactful 🚀</h3>
+            <p>
+            We specialize in AI systems, automation and scalable web platforms.
+            If you have an idea — we can turn it into production reality.
+            </p>
+        </div>
 
-          <div className="contact-card">
+        <div className="contact-card highlight">
+            <span className="icon">📧</span>
+            <div>
             <strong>Email</strong>
             <p>psonare56@gentechai.in</p>
-          </div>
+            </div>
+        </div>
 
-          <div className="contact-card">
+        <div className="contact-card">
+            <span className="icon">📍</span>
+            <div>
             <strong>Location</strong>
             <p>Indore, India</p>
-          </div>
+            </div>
+        </div>
 
+        <div className="info-cta">
+            <p>Usually respond within 24 hours</p>
         </div>
 
       </div>
