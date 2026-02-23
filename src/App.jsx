@@ -8,6 +8,7 @@ import Team from "./components/Team"
 import Footer from "./components/Footer"
 import ThemeButton from "./components/ThemeButton"
 import ProjectDetail from "./pages/ProjectDetail"
+import Contact from "./pages/Contact"
 
 function App() {
   const [route, setRoute] = useState(window.location.hash || "")
@@ -30,6 +31,18 @@ function App() {
       <>
         <ThemeButton />
         <ProjectDetail index={idx} />
+      </>
+    )
+  }
+
+  // Contact page route
+  if (route === "#contact") {
+    return (
+      <>
+        <ThemeButton />
+        <Navbar />
+        <Contact />
+        <Footer />
       </>
     )
   }

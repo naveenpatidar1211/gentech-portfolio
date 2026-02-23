@@ -26,7 +26,7 @@ function Hero() {
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">View Our Work</a>
-            <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+            <a href="#team" className="btn btn-secondary"> Meet Our Team</a>
           </div>
         </div>
         <div className="hero-image">

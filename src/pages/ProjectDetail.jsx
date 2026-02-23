@@ -4,55 +4,82 @@ import Counter from "../components/Counter"
 
 // Tech icon mapping
 const techIcons = {
-  "Python": "🐍",
-  "FastAPI": "⚡",
-  "PostgreSQL": "🐘",
-  "PostGIS": "🗺️",
-  "AWS": "☁️",
-  "React": "⚛️",
-  "TypeScript": "📘",
-  "Mapbox": "🗺️",
-  "OpenAI": "🤖",
-  "Anthropic": "🧠",
-  "Gemini": "✨",
+  Python: "🐍",
+  FastAPI: "⚡",
+  PostgreSQL: "🐘",
+  PostGIS: "🗺️",
+  AWS: "☁️",
+  React: "⚛️",
+  TypeScript: "📘",
+  Mapbox: "🗺️",
+  OpenAI: "🤖",
+  Anthropic: "🧠",
+  Gemini: "✨",
   "AWS Bedrock": "🪨",
-  "PySpark": "⚡",
-  "Flask": "🍶",
+  PySpark: "⚡",
+  Flask: "🍶",
   "Zoho CRM": "📊",
   "Zoho Books": "📖",
   "Zoho API": "🔌",
-  "Webhooks": "🪝",
-  "JavaScript": "📜",
+  Webhooks: "🪝",
+  JavaScript: "📜",
   "Node.js": "🟢",
-  "Express": "🚂",
-  "MongoDB": "🍃",
-  "Firebase": "🔥",
-  "TailwindCSS": "🎨",
+  Express: "🚂",
+  MongoDB: "🍃",
+  Firebase: "🔥",
+  TailwindCSS: "🎨",
   "Next.js": "▲",
-  "Vue": "💚",
+  Vue: "💚",
 }
 
 function ProjectDetail({ index }) {
-  // Scroll to top when component mounts or index changes
+  const p = projects[index]
+
+  /* =========================
+     Scroll to top when opening project
+  ========================= */
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [index])
-  const p = projects[index]
+
+  /* =========================
+     Handle browser BACK button
+  ========================= */
+  useEffect(() => {
+    const handleBack = () => {
+      if (!window.location.hash) {
+        const el = document.getElementById("projects")
+        el?.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+
+    window.addEventListener("hashchange", handleBack)
+
+    return () => {
+      window.removeEventListener("hashchange", handleBack)
+    }
+  }, [])
+
+  /* =========================
+     Shared back navigation
+  ========================= */
+  const goBackToProjects = () => {
+    window.location.hash = ""
+
+    setTimeout(() => {
+      const el = document.getElementById("projects")
+      el?.scrollIntoView({ behavior: "smooth" })
+    }, 80)
+  }
 
   if (!p) {
     return (
       <section className="project-detail not-found">
         <div className="container">
           <p>Project not found.</p>
-          <button className="btn" onClick={() => {
-            window.location.hash = ""
-            setTimeout(() => {
-              const projectsSection = document.getElementById("projects")
-              if (projectsSection) {
-                projectsSection.scrollIntoView({ behavior: "smooth" })
-              }
-            }, 100)
-          }}>Back to Projects</button>
+          <button className="btn" onClick={goBackToProjects}>
+            Back to Projects
+          </button>
         </div>
       </section>
     )
@@ -62,19 +89,11 @@ function ProjectDetail({ index }) {
     <section className="project-detail">
       <div className="container">
 
-        <a className="back-link" onClick={() => {
-          window.location.hash = ""
-          setTimeout(() => {
-            const projectsSection = document.getElementById("projects")
-            if (projectsSection) {
-              projectsSection.scrollIntoView({ behavior: "smooth" })
-            }
-          }, 100)
-        }}>
+        <a className="back-link" onClick={goBackToProjects}>
           ← Back to Projects
         </a>
 
-        {/* HERO CARD */}
+        {/* HERO */}
         <div className="detail-hero">
 
           <div className="detail-image">
@@ -83,24 +102,32 @@ function ProjectDetail({ index }) {
 
           <div className="detail-body">
             <h1>{p.title}</h1>
-
             <p className="lead">{p.description}</p>
 
-            {/* META ROW */}
             <div className="meta-row">
               <div>⏱ Timeline <span>N/A</span></div>
               <div>📂 Category <span>Web</span></div>
               <div>⚡ Status <span>Active</span></div>
             </div>
 
-            {/* ACTION BUTTONS */}
             <div className="detail-actions">
-              {p.live && <a href={p.live} target="_blank" rel="noreferrer" className="btn live">Live</a>}
-              {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="btn github">Code</a>}
-              {p.video && <a href={p.video} target="_blank" rel="noreferrer" className="btn demo">Demo</a>}
+              {p.live && (
+                <a href={p.live} target="_blank" rel="noreferrer" className="btn live">
+                  Live
+                </a>
+              )}
+              {p.github && (
+                <a href={p.github} target="_blank" rel="noreferrer" className="btn github">
+                  Code
+                </a>
+              )}
+              {p.video && (
+                <a href={p.video} target="_blank" rel="noreferrer" className="btn demo">
+                  Demo
+                </a>
+              )}
             </div>
 
-            {/* TECH PILLS */}
             <h4 className="tech-title">Technologies Used</h4>
             <div className="project-tech">
               {p.technologies?.map((t, i) => (
@@ -110,41 +137,40 @@ function ProjectDetail({ index }) {
                 </span>
               ))}
             </div>
-
           </div>
         </div>
 
-        {/* ABOUT CARD */}
+        {/* ABOUT */}
         <div className="detail-section">
           <h3>About This Project</h3>
           <p>{p.long_description}</p>
         </div>
 
-        {/* ===== STATS SECTION (BOTTOM) ===== */}
-    <div className="stats-row">
+        {/* STATS */}
+        <div className="stats-row">
 
-      <div className="stat-card">
-        <div className="stat-icon">🚀</div>
-        <Counter end={20} />
-        <h5>Projects Delivered</h5>
-        <p>Successfully completed projects across various domains</p>
-      </div>
+          <div className="stat-card">
+            <div className="stat-icon">🚀</div>
+            <Counter end={20} />
+            <h5>Projects Delivered</h5>
+            <p>Successfully completed projects across various domains</p>
+          </div>
 
-      <div className="stat-card">
-        <div className="stat-icon">🤝</div>
-        <Counter end={15} />
-        <h5>Satisfied Clients</h5>
-        <p>Building long-term relationships with our clients</p>
-      </div>
+          <div className="stat-card">
+            <div className="stat-icon">🤝</div>
+            <Counter end={15} />
+            <h5>Satisfied Clients</h5>
+            <p>Building long-term relationships with our clients</p>
+          </div>
 
-      <div className="stat-card">
-        <div className="stat-icon">💻</div>
-        <Counter end={1000} />
-        <h5>Hours of Development</h5>
-        <p>Dedicated to creating exceptional digital experiences</p>
-      </div>
+          <div className="stat-card">
+            <div className="stat-icon">💻</div>
+            <Counter end={1000} />
+            <h5>Hours of Development</h5>
+            <p>Dedicated to creating exceptional digital experiences</p>
+          </div>
 
-    </div>
+        </div>
 
       </div>
     </section>
@@ -152,4 +178,3 @@ function ProjectDetail({ index }) {
 }
 
 export default ProjectDetail
-
