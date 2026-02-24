@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import ThemeButton from "./components/ThemeButton"
 import ProjectDetail from "./pages/ProjectDetail"
 import Contact from "./pages/Contact"
+import Career from "./pages/Career"
 
 function App() {
   const [route, setRoute] = useState(window.location.hash || "")
@@ -42,6 +43,18 @@ function App() {
         <ThemeButton />
         <Navbar />
         <Contact />
+        <Footer />
+      </>
+    )
+  }
+
+  // career page route
+  if (route === "#career") {
+    return (
+      <>
+        <ThemeButton />
+        <Navbar />
+        <Career />
         <Footer />
       </>
     )
