@@ -18,24 +18,25 @@ function Team() {
           <div className={`team-card reveal delay-1 ${visible ? "active" : ""}`}>
             <img src="/Ayush_Tiwari.png" alt="Ayush Tiwari" className="team-photo" />
             <h3>Ayush Tiwari</h3>
-            <p className="role">CTO & AI/ML Developer</p>
-            <p className="description">Passionate about data-driven insights, machine learning models, and applied AI research for real-world problems.</p>
+            <p className="role">Founder & AI/ML Developer</p>
+            <p className="description">Passionate about leveraging data-driven insights, machine learning models, and applied AI research to solve real-world challenges. Leads product vision and technical development, designing and deploying scalable AI solutions including Generative AI, LLM applications, and intelligent systems while driving innovation, architecture decisions, and overall company growth.
+</p>
             <p className="email"><a href="mailto:ayushtiwari@gentech.in">ayushtiwari@gentech.in</a></p>
           </div>
 
           <div className={`team-card reveal delay-2 ${visible ? "active" : ""}`}>
             <img src="/paras.jpeg" alt="Paras Sonare" className="team-photo" />
             <h3>Paras Sonare</h3>
-            <p className="role">CEO & Sales Manager</p>
-            <p className="description">Specializing in AI/ML and Generative AI solutions. Focused on automation, innovation, and intelligent systems.</p>
+            <p className="role">Co-Founder & Sales Manager</p>
+            <p className="description">Strategic business leader focused on driving company growth through partnerships, client acquisition, and revenue strategy. Combines market insight with strong relationship management to position AI/ML and Generative AI solutions effectively, ensuring customer value, business expansion, and sustainable sales performance.</p>
             <p className="email"><a href="mailto:psonare56@gentech.in">psonare56@gentech.in</a></p>
           </div>
 
           <div className={`team-card reveal delay-3 ${visible ? "active" : ""}`}>
             <img src="/naveen sir.png" alt="Naveen Patidar" className="team-photo" />
             <h3>Naveen Patidar</h3>
-            <p className="role">Founder & DevOps Engineer with AI/ML Expertise</p>
-            <p className="description">Specialized in DevOps with strong expertise in automation, CI/CD, and infrastructure management, complemented by AI/ML and Generative AI solutions to enhance efficiency and innovation.</p>
+            <p className="role">CTO & DevOps Engineer with AI/ML Expertise</p>
+            <p className="description">Leads the company’s technology strategy and infrastructure architecture, ensuring scalable, secure, and high-performance systems. Specialized in DevOps practices including automation, CI/CD pipelines, cloud infrastructure, and deployment optimization, while integrating AI/ML and Generative AI solutions to enhance product capabilities, operational efficiency, and innovation.</p>
             <p className="email"><a href="mailto:naveenpatidar@gentech.in">naveenpatidar@gentech.in</a></p>
           </div>
 
@@ -50,8 +51,8 @@ function Team() {
           <div className={`team-card reveal delay-1 ${visible ? "active" : ""}`}>
             <img src="/sohail.jpeg" alt="Sohail Pathan" className="team-photo" />
             <h3>Sohail Pathan</h3>
-            <p className="role">AI/ML Developer</p>
-            <p className="description">AI/ML Developer specializing in Generative AI, LLMs, RAG systems, and cloud technologies (AWS). Experienced in building AI-driven solutions, chatbots, and intelligent applications using Python and OpenCV.</p>
+            <p className="role">CEO & Sr. Project Manager</p>
+            <p className="description">Manages end-to-end execution of AI/ML and software projects, coordinating teams, timelines, and resources to ensure successful delivery. Drives agile processes, stakeholder communication, and quality assurance for scalable, intelligent solutions</p>
             <p className="email"><a href="mailto:sohailpathan@gentech.in">sohailpathan@gentech.in</a></p>
           </div>
 
