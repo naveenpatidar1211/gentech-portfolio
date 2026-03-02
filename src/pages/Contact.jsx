@@ -2,8 +2,10 @@ import { useState, useEffect } from "react"
 
 function Contact() {
   const [form, setForm] = useState({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
+    country: "",
     message: ""
   })
 
@@ -22,11 +24,10 @@ function Contact() {
     const subject = encodeURIComponent("Portfolio Contact")
 
     const body = encodeURIComponent(
-      `Name: ${form.name}
-Email: ${form.email}
-
-Message:
-${form.message}`
+      `Name: ${form.first_name} ${form.last_name}
+      Email: ${form.email}
+      Country: ${form.country}
+      Message: ${form.message}`
     )
 
     window.open(
@@ -34,7 +35,7 @@ ${form.message}`
       "_self"
     )
 
-    setForm({ name: "", email: "", message: "" })
+    setForm({ first_name: "", last_name: "", email: "", country: "", message: "" })
   }
 
   return (
@@ -47,13 +48,45 @@ ${form.message}`
           <p>Have a project idea or collaboration? Let's talk.</p>
 
           <form onSubmit={handleSubmit}>
-            <input
-              name="name"
-              placeholder="Your Name"
+            {/* <input
+              name="first_name"
+              placeholder="First Name"
               required
-              value={form.name}
+              value={form.first_name}
               onChange={handleChange}
             />
+
+            <input
+              name="last_name"
+              placeholder="Last Name"
+              required
+              value={form.last_name}
+              onChange={handleChange}
+            /> */}
+
+            <div className="name-row">
+              <div className="input-group">
+                <label className="input-label">FIRST NAME</label>
+                <input
+                  name="firstName"
+                  placeholder="First Name"
+                  required
+                  value={form.firstName}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="input-group">
+                <label className="input-label">LAST NAME</label>
+                <input
+                  name="lastName"
+                  placeholder="Last Name"
+                  required
+                  value={form.lastName}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
 
             <input
               type="email"
@@ -61,6 +94,15 @@ ${form.message}`
               placeholder="Your Email"
               required
               value={form.email}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="country"
+              placeholder="Your Country"
+              required
+              value={form.country}
               onChange={handleChange}
             />
 
@@ -86,6 +128,11 @@ ${form.message}`
           <div className="contact-card">
             <strong>Email</strong>
             <p>psonare56@gentechai.in</p>
+          </div>
+
+          <div className="contact-card">
+            <strong>Phone</strong>
+            <p>+91 85180 57069</p>
           </div>
 
           <div className="contact-card">

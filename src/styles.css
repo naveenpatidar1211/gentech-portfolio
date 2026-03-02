@@ -1540,8 +1540,8 @@ html {
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
+  transform: translateY(03px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.active {
@@ -1879,9 +1879,31 @@ html {
     font-weight: 600;
 }
 
+.name-row {
+  display: flex;
+  gap: 16px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #575f6a;
+}
+
 /* Improve card contrast in dark mode */
 .dark-theme .contact-info {
     background: #1e293b;
+}
+
+.dark-theme .input-label {
+    color: #8b97a9;
 }
 
 .dark-theme .contact-card {
@@ -1937,6 +1959,12 @@ html {
     }
 }
 
+@media (max-width: 768px) {
+  .name-row {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
     .contact-page {
         padding: 60px 0;
@@ -1989,6 +2017,14 @@ html {
 
 .career-section {
   margin-bottom: 60px;
+  
+}
+
+.career-section .career-card.clickable {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
 }
 
 .career-section h2 {
@@ -2024,7 +2060,7 @@ html {
 }
 
 .career-grid p {
-  color: var(--text-dark);
+  color: var(--text-secondary);
 }
 
 .career-card {
@@ -2064,11 +2100,253 @@ html {
 }
 
 .career-cta p {
-  color: var(--text-dark);
+  color: var(--text-secondary);
   margin-bottom: 16px;
 }
 
 .career-cta h3 {
   color: var(--primary-color);
   margin-bottom: 12px;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clickable:hover {
+  transform: translateY(-5px);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 40px 20px;
+}
+
+/* Modern Modal Box */
+.modal-content.modern {
+  background:  #f6f8ff;
+  padding-bottom: 70px; /* reserve space for button */
+  width: 100%;
+  max-width: 1100px;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  border: 1px solid #e0e6ff;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blue Title */
+.modal-title-blue {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #5b6cff;
+}
+
+/* Grid Layout */
+.modal-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+
+/* Cards */
+.modal-card-modern {
+  position: relative;
+  padding: 26px;
+  padding-bottom: 80px; /* important */
+  border-radius: 16px;
+  background: #f6f8ff;
+  border: 1px solid #e0e6ff;
+  transition: all 0.3s ease;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-card-modern h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2f5bff;
+}
+
+.modal-card-modern p {
+    color: #5b6472;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Wrapper */
+.apply-wrapper {
+  position: absolute;
+  bottom: 24px;
+  right: 28px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Dot (initial state) */
+.apply-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5b6cff, #2f5bff);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+/* Text */
+.apply-text {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s ease 0.1s;
+}
+
+/* Hover lift */
+.modal-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(91,108,255,0.15);
+}
+
+/* Expand ONLY when hovering dot */
+.apply-wrapper:hover .apply-dot {
+  height: 30px;
+  width: 150px;
+  border-radius: 30px;
+}
+
+/* Show text */
+.apply-wrapper:hover .apply-text {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .modal-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-grid-modern {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+/* Remove grid look */
+.modal-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Each role block */
+.modal-role h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1f2937; /* darker heading */
+}
+
+.modal-role p {
+  color: #4b5563; /* softer description */
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* OPPORTUNITY GRID - LEFT TO RIGHT */
+.opportunity-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+/* CARD STYLE - BLUE THEME */
+.opportunity-grid .career-card {
+  padding: 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eef3ff, #e3ecff);
+  border: 1px solid #d4dcff;
+  transition: all 0.3s ease;
+
+  /* ADD THIS */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.opportunity-grid .career-card h4 {
+  color: #2f5bff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0; /* remove default margin */
+}
+
+/* Hover Effect */
+.opportunity-grid .career-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(47, 91, 255, 0.15);
+  background: linear-gradient(135deg, #e0e9ff, #d6e2ff);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .opportunity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
 }
