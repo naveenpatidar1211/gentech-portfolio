@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 
 function Contact() {
   const [form, setForm] = useState({
-    first_name: "",
-    last_name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     country: "",
     message: ""
@@ -24,7 +24,7 @@ function Contact() {
     const subject = encodeURIComponent("Portfolio Contact")
 
     const body = encodeURIComponent(
-      `Name: ${form.first_name} ${form.last_name}
+      `Name: ${form.firstName} ${form.lastName}
       Email: ${form.email}
       Country: ${form.country}
       Message: ${form.message}`
@@ -35,7 +35,13 @@ function Contact() {
       "_self"
     )
 
-    setForm({ first_name: "", last_name: "", email: "", country: "", message: "" })
+    setForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      country: "",
+      message: ""
+    })
   }
 
   return (
