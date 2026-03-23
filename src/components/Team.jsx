@@ -18,7 +18,7 @@ function Team() {
           <div className={`team-card reveal delay-1 ${visible ? "active" : ""}`}>
             <img src="/Ayush_Tiwari.png" alt="Ayush Tiwari" className="team-photo" />
             <h3>Ayush Tiwari</h3>
-            <p className="role">Founder & AI/ML Developer</p>
+            <p className="role">Founder & CEO </p>
             <p className="description">Passionate about leveraging data-driven insights, machine learning models, and applied AI research to solve real-world challenges. Leads product vision and technical development, designing and deploying scalable AI solutions including Generative AI, LLM applications, and intelligent systems while driving innovation, architecture decisions, and overall company growth.</p>
             {/* <p className="email"><a href="mailto:ayushtiwari@gentech.in">ayushtiwari@gentech.in</a></p> */}
           </div>
@@ -47,13 +47,13 @@ function Team() {
             <p className="email"><a href="mailto:harshjaiswal@gentech.in">harshjaiswal@gentech.in</a></p>
           </div> */}
 
-          <div className={`team-card reveal delay-1 ${visible ? "active" : ""}`}>
+          {/* <div className={`team-card reveal delay-1 ${visible ? "active" : ""}`}>
             <img src="/sohail.jpeg" alt="Sohail Pathan" className="team-photo" />
             <h3>Sohail Pathan</h3>
-            <p className="role">CEO & Sr. Project Manager</p>
+            <p className="role">Sr. Project Manager & AI/ML Expertise</p>
             <p className="description">Manages end-to-end execution of AI/ML and software projects, coordinating teams, timelines, and resources to ensure successful delivery. Drives agile processes, stakeholder communication, and quality assurance for scalable, intelligent solutions</p>
-            {/* <p className="email"><a href="mailto:sohailpathan@gentech.in">sohailpathan@gentech.in</a></p> */}
-          </div>
+            <p className="email"><a href="mailto:sohailpathan@gentech.in">sohailpathan@gentech.in</a></p>
+          </div> */}
 
           <div className={`team-card reveal delay-2 ${visible ? "active" : ""}`}>
             <img src="/shashikant.jpeg" alt="Shashikant Pal" className="team-photo" />
