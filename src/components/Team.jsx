@@ -52,7 +52,7 @@ function Team() {
             <h3>Sohail Pathan</h3>
             <p className="role">Sr. Project Manager & AI/ML Expertise</p>
             <p className="description">Manages end-to-end execution of AI/ML and software projects, coordinating teams, timelines, and resources to ensure successful delivery. Drives agile processes, stakeholder communication, and quality assurance for scalable, intelligent solutions</p>
-            <p className="email"><a href="mailto:sohailpathan@gentech.in">sohailpathan@gentech.in</a></p>
+            {/* <p className="email"><a href="mailto:sohailpathan@gentech.in">sohailpathan@gentech.in</a></p> */}
           </div>
 
           <div className={`team-card reveal delay-2 ${visible ? "active" : ""}`}>
