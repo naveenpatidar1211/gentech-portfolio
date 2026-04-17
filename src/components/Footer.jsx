@@ -23,7 +23,7 @@ function Footer() {
               <p>Driving innovation with Generative AI, Computer Vision & Deep Learning solutions</p>
               <div className="footer-address">
                 <p><i className="fas fa-map-marker-alt"></i> Indore, Madhya Pradesh, India</p>
-                <p><i className="fas fa-envelope"></i> <a href="mailto:info@gentechai.com">info@gentechai.com</a></p>
+                <p><i className="fas fa-envelope"></i> <a href="mailto:support@gentechai.in">support@gentechai.in</a></p>
                 <p><i className="fas fa-phone"></i> <a href="tel:+91-XXXXXXXXXX">Contact Us</a></p>
               </div>
             </div>
@@ -45,12 +45,12 @@ function Footer() {
             <div className="footer-section">
               <h4>Services</h4>
               <ul className="footer-links">
-                <li><a href="#projects">Generative AI Solutions</a></li>
-                <li><a href="#projects">Computer Vision Systems</a></li>
-                <li><a href="#projects">ML Model Development</a></li>
-                <li><a href="#projects">Data Analysis & Insights</a></li>
-                <li><a href="#projects">API Integration</a></li>
-                <li><a href="#projects">Cloud Infrastructure</a></li>
+                <li><p>Generative AI Solutions</p></li>
+                <li><p>Computer Vision Systems</p></li>
+                <li><p>ML Model Development</p></li>
+                <li><p>Data Analysis & Insights</p></li>
+                <li><p>API Integration</p></li>
+                <li><p>Cloud Infrastructure</p></li>
               </ul>
             </div>
 
@@ -67,16 +67,16 @@ function Footer() {
                 <a href="#contact" className="social-link" title="Email">
                   <i className="fas fa-envelope"></i>
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-link" title="Twitter">
+                {/* <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-link" title="Twitter">
                   <i className="fab fa-twitter"></i>
-                </a>
+                </a> */}
               </div>
-              <div className="newsletter">
+              {/* <div className="newsletter">
                 <p>Stay updated with our latest innovations</p>
                 <button onClick={() => setOpen(true)} className="btn btn-newsletter">
                   Get In Touch
                 </button>
-              </div>
+              </div> */}
             </div>
 
           </div>

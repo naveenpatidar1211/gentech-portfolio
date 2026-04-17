@@ -13,7 +13,8 @@ Impact & Benefits:
 Bzail revolutionizes real estate site selection by combining large-scale geospatial data handling with advanced AI intelligence. It saves weeks of manual effort, delivers accurate and fast results, and empowers brokers and developers with data-driven insights for decision-making.`,
     technologies: ["Python", "FastAPI", "PostgreSQL", "PostGIS", "AWS", "React", "TypeScript", "Mapbox", "OpenAI", "Anthropic", "Gemini", "AWS Bedrock", "PySpark"],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-    live: "https://app.baizel.ai/"
+    live: "https://app.baizel.ai/",
+    video: "https://drive.google.com/file/d/1pUP4oEUDjtzVQiGz8QHPRrX9-7DhLK2o/view?usp=drivesdk"
   },
 
   {
@@ -31,6 +32,7 @@ Impact & Benefits:
 The solution reduced quotation turnaround time from hours to seconds, significantly improving customer experience and operational efficiency. It eliminated repetitive manual tasks, ensured real-time accuracy in pricing and invoicing, and optimized the sales team's productivity.`,
     technologies: ["Flask", "React", "Zoho CRM", "Zoho Books", "Zoho API", "Webhooks"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    github: "https://github.com/gentechai/End-to-End-Guard-Service-Automation-using-Zoho-CRM-Zoho-Books",
     video: "https://youtu.be/drI_J-anbps?si=59KWMAZqoaspKqpJ"
   },
 

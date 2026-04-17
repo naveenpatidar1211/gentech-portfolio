@@ -11,7 +11,7 @@ function TeamPage() {
       bio: "Passionate about leveraging data-driven insights, machine learning models, and applied AI research to solve real-world challenges. Leads product vision and technical development, designing and deploying scalable AI solutions including Generative AI, LLM applications, and intelligent systems while driving innovation, architecture decisions, and overall company growth.",
       specialties: ["Generative AI", "LLM Architecture", "Product Strategy", "ML Systems Design"],
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/ayush-tiwari420/",
         twitter: "#"
       }
     },
@@ -22,7 +22,7 @@ function TeamPage() {
       bio: "Strategic business leader focused on driving company growth through partnerships, client acquisition, and revenue strategy. Combines market insight with strong relationship management to position AI/ML and Generative AI solutions effectively, ensuring customer value, business expansion, and sustainable sales performance.",
       specialties: ["Business Strategy", "Client Relations", "Market Analysis", "Growth Strategy"],
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/paras-sonare/",
         twitter: "#"
       }
     },
@@ -33,7 +33,7 @@ function TeamPage() {
       bio: "Leads the company's technology strategy and infrastructure architecture, ensuring scalable, secure, and high-performance systems. Specialized in DevOps practices including automation, CI/CD pipelines, cloud infrastructure, and deployment optimization, while integrating AI/ML and Generative AI solutions to enhance product capabilities, operational efficiency, and innovation.",
       specialties: ["Cloud Architecture", "DevOps", "MLOps", "System Design", "CI/CD"],
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/naveenpatidar1/",
         twitter: "#"
       }
     },
@@ -44,7 +44,7 @@ function TeamPage() {
       bio: "Manages end-to-end execution of AI/ML and software projects, coordinating teams, timelines, and resources to ensure successful delivery. Drives agile processes, stakeholder communication, and quality assurance for scalable, intelligent solutions.",
       specialties: ["Project Management", "Agile Methodology", "Team Coordination", "AI/ML"],
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/sohailpathan975",
         twitter: "#"
       }
     },
@@ -55,7 +55,7 @@ function TeamPage() {
       bio: "Expert in computer vision and deep learning architectures, specializing in object detection, image segmentation, and real-time video processing. Skilled with PyTorch, OpenCV, and YOLO for building production-ready vision systems.",
       specialties: ["Computer Vision", "Deep Learning", "Object Detection", "Image Segmentation", "PyTorch"],
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/shashikant-pal-honey/",
         twitter: "#"
       }
     }
@@ -140,12 +140,18 @@ function TeamMemberCard({ member, idx }) {
         <img src={member.image} alt={member.name} className="member-image" />
         <div className="member-overlay">
           <div className="social-icons">
-            <a href={member.social.linkedin} className="social-icon" title="LinkedIn">
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a href={member.social.twitter} className="social-icon" title="Twitter">
+            <a
+  href={member.social.linkedin}
+  className="social-icon"
+  title="LinkedIn"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <i className="fab fa-linkedin"></i>
+</a>
+            {/* <a href={member.social.twitter} className="social-icon" title="Twitter">
               <i className="fab fa-twitter"></i>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -136,10 +136,10 @@ function Contact() {
             <p>psonare56@gentechai.in</p>
           </div>
 
-          <div className="contact-card">
+          {/* <div className="contact-card">
             <strong>Phone</strong>
             <p>+91 85180 57069</p>
-          </div>
+          </div> */}
 
           <div className="contact-card">
             <strong>Location</strong>
