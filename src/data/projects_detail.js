@@ -1,3 +1,5 @@
+import bzailImg from '../assets/bzail.png'
+
 const projects = [
   {
     title: "Bzail Site Selection Tool",
@@ -12,7 +14,7 @@ For AI integration, Bzail employs OpenAI, Anthropic, Gemini, and AWS Bedrock, or
 Impact & Benefits:
 Bzail revolutionizes real estate site selection by combining large-scale geospatial data handling with advanced AI intelligence. It saves weeks of manual effort, delivers accurate and fast results, and empowers brokers and developers with data-driven insights for decision-making.`,
     technologies: ["Python", "FastAPI", "PostgreSQL", "PostGIS", "AWS", "React", "TypeScript", "Mapbox", "OpenAI", "Anthropic", "Gemini", "AWS Bedrock", "PySpark"],
-    image: "/src/assets/bzail.png",
+    image: bzailImg,
     live: "https://app.baizel.ai/",
     video: "https://drive.google.com/file/d/1pUP4oEUDjtzVQiGz8QHPRrX9-7DhLK2o/view?usp=drivesdk"
   },
